@@ -7,7 +7,7 @@ The original code of CLEAR is written in Jupyter Notebook. For simplicity, we tu
 
 ## Training Pre-trained Models on API Recommendation Task
 
-The following example fine-tunes Pre-trained models by using Sentence Transformer Library [here](https://www.sbert.net/docs/package_reference/SentenceTransformer.html). CLEAR uses distilled roberta-base to get the embedding of questions and APIs. To show the effectiveness of other pre-trained models in API recommendation task, we replace the distilled roberta-base by other Pre-trained models such as Roberta-base, CodeBERT, GraphCodeBERT and keep the other parts the same.
+CLEAR fine-tunes pre-trained models by using Sentence Transformer Library [here](https://www.sbert.net/docs/package_reference/SentenceTransformer.html). In the original paper, CLEAR uses distilled roberta-base to get the embedding of questions and APIs. To show the effectiveness of other pre-trained models in API recommendation task, we replace the distilled roberta-base by other pre-trained models such as Roberta-base, CodeBERT, and GraphCodeBERT. We keep the other parts the same and only replace the pre-trained models.
 
 To train the models, please run:
 ```bash
