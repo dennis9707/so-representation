@@ -5,20 +5,25 @@ The original replication of CLEAR is available [here](https://github.com/Moshiii
 The original code of CLEAR is written in Jupyter Notebook. For simplicity, we turn it into python code files.
 
 
-## Training CLEAR 
+## Training Pre-trained Models on API Recommendation Task
 
 The following example fine-tunes Pre-trained models by using Sentence Transformer Library [here](https://www.sbert.net/docs/package_reference/SentenceTransformer.html). CLEAR uses distilled roberta-base to get the embedding of questions and APIs. To show the effectiveness of other pre-trained models in API recommendation task, we replace the distilled roberta-base by other Pre-trained models such as Roberta-base, CodeBERT, GraphCodeBERT and keep the other parts the same.
 
-
+To train the models, please run:
 ```bash
-python run_mlm.py \
-    --model_name_or_path roberta-base \
-    --dataset_name wikitext \
-    --dataset_config_name wikitext-2-raw-v1 \
-    --per_device_train_batch_size 8 \
-    --per_device_eval_batch_size 8 \
+python bi_encoder_train.py \
     --do_train \
-    --do_eval \
-    --output_dir /tmp/test-mlm
+    --model_name roberta-base \
+    --batch_size 256 
 ```
+
+## Testing Pre-trained Models on API Recommendation Task
+To test the finetuned models, please run:
+```bash
+python retrieve_rerank_method.py \
+    --trained_bi_encoder PATH_to_finetuned_model \
+    --test_dataset biker_test
+```
+
+
 
