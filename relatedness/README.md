@@ -1,31 +1,5 @@
----
-tags:
-- generated_from_trainer
-model-index:
-- name: ''
-  results: []
----
 
-<!-- This model card has been generated automatically according to the information the Trainer had access to. You
-should probably proofread and complete it, then remove this comment. -->
-
-# 
-
-This model is a fine-tuned version of [./result/checkpoint-19500](https://huggingface.co/./result/checkpoint-19500) on an unknown dataset.
-
-## Model description
-
-More information needed
-
-## Intended uses & limitations
-
-More information needed
-
-## Training and evaluation data
-
-More information needed
-
-## Training procedure
+Modify the configs in `01_relatedness_train.sh` for training
 
 ### Training hyperparameters
 

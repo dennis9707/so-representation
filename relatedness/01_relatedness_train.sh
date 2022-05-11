@@ -4,7 +4,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
     --train_file ../../data/relate/LinkPrediction_Dataset/processed_train.csv \
     --validation_file ../../data/relate/LinkPrediction_Dataset/processed_dev.csv \
     --test_file ../../data/relate/LinkPrediction_Dataset/processed_test.csv \
-    --output_dir ./result/April-21-longformer-code-cl-setting2 \
+    --output_dir ./result/ \
     --num_train_epochs 12 \
     --per_device_train_batch_size 16 \
     --per_device_eval_batch_size 16 \
@@ -21,4 +21,4 @@ CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7 python -m torch.distributed.launch \
     --evaluation_strategy epoch \
     --fp16 \
     --fp16_opt_level O2 \
-    "$@" 2>&1| tee ./train_relate—april-21-longformer-code-cl-setting2.log
+    "$@" 2>&1| tee ./train.log
