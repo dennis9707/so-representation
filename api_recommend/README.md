@@ -7,11 +7,8 @@ The original code of CLEAR is written in Jupyter Notebook. For simplicity, we tu
 
 ## Training CLEAR 
 
-The following example fine-tunes RoBERTa on WikiText-2. Here too, we're using the raw WikiText-2. The loss is different
-as BERT/RoBERTa have a bidirectional mechanism; we're therefore using the same loss that was used during their
-pre-training: masked language modeling.
-In accordance to the RoBERTa paper, we use dynamic masking rather than static masking. The model may, therefore,
-converge slightly slower (over-fitting takes more epochs).
+The following example fine-tunes Pre-trained models by using Sentence Transformer Library [here](https://www.sbert.net/docs/package_reference/SentenceTransformer.html). CLEAR uses distilled roberta-base to get the embedding of questions and APIs. To show the effectiveness of other pre-trained models in API recommendation task, we replace the distilled roberta-base by other Pre-trained models such as Roberta-base, CodeBERT, GraphCodeBERT and keep the other parts the same.
+
 
 ```bash
 python run_mlm.py \
