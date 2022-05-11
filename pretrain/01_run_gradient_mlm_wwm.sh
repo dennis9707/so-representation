@@ -1,0 +1,15 @@
+CUDA_VISIBLE_DEVICES=0,1 python -m torch.distributed.launch \
+    --nproc_per_node=2 run_mlm_wwm.py \
+    --model_name_or_path microsoft/codebert-base \
+    --output_dir ./tmp/april7/ \
+    --do_train \
+    --logging_steps 500 \
+    --per_device_train_batch_size 1 \
+    --learning_rate 1e-5 \
+    --weight_decay 1e-3 \
+    --adam_epsilon 1e-6 \
+    --num_train_epochs 1 \
+    --warmup_steps 100 \
+    --gradient_accumulation_steps 16 \
+    --fp16 \
+    --fp16_opt_level O2 2>&1| tee ./mlm_wwm-new.log
